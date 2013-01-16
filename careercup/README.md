@@ -29,7 +29,7 @@ please explain your algorithm properly rather than pasting code .
 
 如下图：
 
-![](.\pictures\graph.jpg)
+![](./pictures/graph.jpg)
 
 此图的最大团有：
 
