@@ -33,7 +33,7 @@ please explain your algorithm properly rather than pasting code .
 
 此图的最大团有：
 
-![](.\pictures\maxclique1.jpg) ![](.\pictures\maxclique2.jpg) ![](.\pictures\maxclique3.jpg)
+![](./pictures/maxclique1.jpg) ![](./pictures/maxclique2.jpg) ![](./pictures/maxclique3.jpg)
 
 那怎样求一个图的呢？朴素的搜索将会是n*2^n的时间复杂度，所以需要进行剪枝，并记录一些状态，即DP+DFS的思想。先把代码写出来。
 
