@@ -236,3 +236,34 @@ C语言中的sizeof是一个运算符，它在代码被编译时就进行解析�
 	cout<<mysizeof(short)<<endl;   // output : 2
 
 结果将输出2。
+
+###2013.2.16 Modification
+今天对上面实现的sizeof做一个说明：    
+1.原来的sizeof函数可以对**数组和结构体**进行处理的，处理方式如下：
+
+	int array[4];
+	cout<<mysizeof(array)<<endl;   // output : 16
+	
+	struct Node{
+		int a;
+		short b;
+	};
+	Node n;
+	cout<<mysizeof(n)<<endl;     // output:8 in my llvm compiler
+	cout<<mysizeof(Node)<<endl;   // output : 8 in my llvm compiler
+	
+	typedef int array4[4];
+	array4 arr;
+	cout<<mysizeof(arr)<<endl;   // output : 16
+	cout<<mysizeof(array4)<<endl;   // output : 16
+	
+2.在看C++ Primer的时候，看到了泛型编程，想到可以写一个函数带得到数组的大小：
+
+	template<class T, int N>
+	int mysizeofarray(T (&arr)[N]){
+		return mysizeof(T)*N;
+	}
+	
+
+
+
